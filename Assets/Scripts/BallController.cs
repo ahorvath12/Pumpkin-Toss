@@ -5,8 +5,10 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     public GameObject rayObj;
-    public Vector3 launchDir;
-    public bool canLaunch;
+
+    [HideInInspector] public bool canLaunch;
+    [HideInInspector] public Vector3 launchDir;
+    [HideInInspector] public int launchForce;
 
     Vector3 curPos, lastPos;
     Rigidbody rb;
@@ -47,7 +49,7 @@ public class BallController : MonoBehaviour
     {
         Vector3 realDir = (transform.position - dir).normalized;
         rb.isKinematic = false;
-        rb.AddForce(realDir * 100);
+        rb.AddForce((-1) * realDir * launchForce);
     }
     
 

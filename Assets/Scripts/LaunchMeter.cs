@@ -5,40 +5,56 @@ using UnityEngine.UI;
 
 public class LaunchMeter : MonoBehaviour
 {
-    public GameObject rayObj;
+    public GameObject ball, rayObj, target, meterBar;
     public Image bar;
+    public PlayerSettingsSO playerSettingsVals;
 
-    public float barChangeSpeed = 1;
-    public int maxPower = 1000;
-    public int minPower = 100;
+    private Camera cam;
+    public float barChangeSpeed;
+    public int maxPower = 1000, minPower = 100;
 
     private float currentPower;
-    
+
+    private void Start()
+    {
+        cam = Camera.main;
+        gameObject.SetActive(false);
+    }
 
     private void OnEnable()
     {
-        transform.position = new Vector3(0, rayObj.transform.position.y + .67f, rayObj.transform.position.z);
+        barChangeSpeed = playerSettingsVals.launchMeterSpeed;
+        currentPower = 0f;
+        //transform.position = new Vector3(0, rayObj.transform.position.y + .67f, rayObj.transform.position.z);
+        StartCoroutine(ChargePower());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //ChargePower(1 * Time.deltaTime);
-        }
-        else if (Input.GetKeyUp(KeyCode.Space))
-        {
-            //let go
-        }
+        float powerVal = maxPower - minPower;
+        powerVal *= currentPower;
+        ball.GetComponent<BallController>().launchForce = (int) powerVal;
+        Debug.Log(powerVal);
     }
 
-    public void ChargePower(float amount)
-    {
-        if (currentPower - amount >= 0)
-        {
-            currentPower -= amount;
 
+    private void Update()
+    {
+        Vector3 offsetPos = target.transform.position;
+
+        //Vector3 screenPos = cam.WorldToScreenPoint(target.transform.position);
+        meterBar.transform.position = RectTransformUtility.WorldToScreenPoint(cam, target.transform.position);
+    }
+
+    private IEnumerator ChargePower()
+    {
+        while (true)
+        {
+            currentPower += barChangeSpeed;
+            bar.fillAmount = currentPower;
+            if (currentPower >= 1 || currentPower <= 0)
+                barChangeSpeed *= -1;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

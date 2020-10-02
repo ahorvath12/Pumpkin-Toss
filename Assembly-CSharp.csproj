@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\LaunchMeter.cs" />
+    <Compile Include="Assets\Scripts\PlayerSettingsSO.cs" />
     <Compile Include="Assets\Scripts\RayObjController.cs" />
     <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
     <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.DirectoryServices.xml" />
@@ -143,14 +144,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:/Users/andre/Unity/Pumpkin Toss/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/andre/Unity/Pumpkin Toss/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/andre/Unity/Pumpkin Toss/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>C:/Users/andre/Unity/Pumpkin Toss/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/andre/Unity/Pumpkin Toss/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

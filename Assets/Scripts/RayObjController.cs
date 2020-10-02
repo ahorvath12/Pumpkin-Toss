@@ -5,12 +5,16 @@ using UnityEngine;
 public class RayObjController : MonoBehaviour
 {
     public GameObject target, meter;
+    public float rotateSpeed;
+    public PlayerSettingsSO playerSettingsVals;
+
+    private bool showBar;
     
 
     // Start is called before the first frame update
     void OnEnable()
     {
-        Debug.Log("On disable");
+        rotateSpeed = playerSettingsVals.rotateBarSpeed;
         transform.position = new Vector3(0, target.transform.position.y + 1.5f, target.transform.position.z);
         transform.rotation = Quaternion.Euler(0, 90, 0);
     }
@@ -23,22 +27,23 @@ public class RayObjController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && showBar)
         {
 
             target.GetComponent<BallController>().launchDir = transform.position;
             target.GetComponent<BallController>().canLaunch = true;
             meter.SetActive(false);
+            showBar = false;
         }
-
-        //Vector3 localForward = transform.parent.InverseTransformDirection(transform.forward);
-        if (Input.GetKeyDown(KeyCode.Space))
+        else if (Input.GetKeyDown(KeyCode.Space) && !showBar)
         {
             meter.SetActive(true);
+            showBar = true;
+            rotateSpeed = 0;
         }
         else
         {
-            transform.RotateAround(target.transform.position, Vector3.right, 30 * Time.deltaTime);
+            transform.RotateAround(target.transform.position, Vector3.right, rotateSpeed * Time.deltaTime);
         }
         
     }
