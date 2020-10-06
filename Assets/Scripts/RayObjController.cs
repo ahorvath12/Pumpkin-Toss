@@ -15,7 +15,7 @@ public class RayObjController : MonoBehaviour
     void OnEnable()
     {
         rotateSpeed = playerSettingsVals.rotateBarSpeed;
-        transform.position = new Vector3(0, target.transform.position.y + 1.5f, target.transform.position.z);
+        transform.position = new Vector3(0, target.transform.position.y + 1.2f, target.transform.position.z);
         transform.rotation = Quaternion.Euler(0, 90, 0);
     }
 
