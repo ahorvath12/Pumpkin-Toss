@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\EndLevel.cs" />
     <Compile Include="Assets\Scripts\LaunchMeter.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PlayerSettingsSO.cs" />
     <Compile Include="Assets\Scripts\RayObjController.cs" />
     <None Include="Assets\Ludiq\Ludiq.PeekCore\DotNetDocumentation\System.xml" />
