@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8baed0c4c8fc3b94c8c0cf17b56f04e8, type: 3}
   m_Name: GlobalSettings
   m_EditorClassIdentifier: 
-  rotateBarSpeed: 30
+  rotateBarSpeed: 40
   launchMeterSpeed: 0.05
   freezeInAir: 0

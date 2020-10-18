@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 26d398f8689fa594cb1fd49eb56bbbb9
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 4c9aa694c03aac4438cfd693530ad4cc
+  - enabled: 1
+    path: Assets/Scenes/Farm.unity
+    guid: 14cb0ad4c4807534a9a361a2cb937f3b
+  - enabled: 1
+    path: Assets/Scenes/Suburbs.unity
+    guid: 6a32771f736db90409f6f986e8f09ff5
+  - enabled: 1
+    path: Assets/Scenes/Wild West.unity
+    guid: 145aa0e6522f7a34fad002336f51c995
+  - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: 2df93b90a6d65d444963cb4651a98dd5
   m_configObjects: {}
