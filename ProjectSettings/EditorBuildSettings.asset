@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Suburbs.unity
     guid: 6a32771f736db90409f6f986e8f09ff5
   - enabled: 1
+    path: Assets/Scenes/newWildWest.unity
+    guid: f14799b3b4ea40c43abdf8dcaa2aef6c
+  - enabled: 0
     path: Assets/Scenes/Wild West.unity
     guid: 145aa0e6522f7a34fad002336f51c995
   - enabled: 1

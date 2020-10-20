@@ -30,6 +30,7 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         settings.launchMeterSpeed = meterSpeeds[2];
         settings.rotateBarSpeed = raySpeeds[2];
         pointerParent.transform.position = new Vector3(numbers[2].transform.position.x, pointerParent.transform.position.y, 0f);

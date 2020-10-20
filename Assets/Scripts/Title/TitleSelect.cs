@@ -27,6 +27,7 @@ public class TitleSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         sum = 1;
         selectedButton = buttons[0].name;
         currentVal = 0;
@@ -81,6 +82,7 @@ public class TitleSelect : MonoBehaviour
         {
             //load scene
             Debug.Log("Load scene");
+            LoadScene(buttons[currentIndex].name);
         }
     }
 
@@ -104,7 +106,7 @@ public class TitleSelect : MonoBehaviour
     private void LoadScene(string name)
     {
         if (name == "Start")
-            name = null;
+            SceneManager.LoadScene("Settings");
         else if (name == "Exit")
             Application.Quit();
     }

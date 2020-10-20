@@ -27,7 +27,7 @@ public class RayObjController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && showBar)
+        if (Input.GetKeyDown(KeyCode.Space) && showBar)
         {
 
             target.GetComponent<BallController>().launchDir = transform.position;
